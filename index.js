@@ -5,6 +5,8 @@ var angular = require('angularjs')
 
   , template = require('./template');
 
+var t = new tip('Name');
+
 angular.module('boxes', [])
   .directive('boxes', ['$compile',
     function ($compile) {
@@ -21,8 +23,14 @@ angular.module('boxes', [])
               element.html(template);
               $compile(element.contents())(scope);
               var box = element[0].querySelector('.box');
-              box.setAttribute('title', value.display.name);
-              tip(box);
+              box.parentNode.addEventListener('mouseover', function () {
+                t.message(value.display.name);
+                t.show(box);
+                t.el.addClass('tip-nomouse');
+              });
+              box.parentNode.addEventListener('mouseout', function () {
+                t.hide();
+              });
             }
             scope.boxes = value;
           });

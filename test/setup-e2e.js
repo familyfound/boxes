@@ -46,6 +46,7 @@ function RandGens(base, max) {
   if (max <= 0) return null;
   else if (max < 4 && Math.random() > 0.8) return null;
   var person = copy(base);
+  person.todos = new Array(parseInt(Math.random() * 10));
   person.father = RandGens(man, max-1);
   person.mother = RandGens(woman, max-1);
   return person;
