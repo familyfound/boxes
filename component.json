@@ -1,0 +1,26 @@
+{
+  "name": "boxes",
+  "repo": "familyfound/boxes",
+  "description": "An Angular directive for representing a family tree as boxes",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {
+    "chaijs/chai": "*",
+    "jabapyth/angularjs": "*",
+    "simov/deep-copy": "*",
+    "component/query": "*",
+    "component/tip": "*",
+    "component/aurora-tip": "*",
+    "jabapyth/bootstrap-labels-badges": "*"
+  },
+  "development": {},
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js",
+    "template.js"
+  ],
+  "styles": [
+    "boxes.css"
+  ]
+}

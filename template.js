@@ -1,0 +1,1 @@
+module.exports = '\n<div class="person">\n  <div class="box"><span ng-show="boxes.todos.length" class="badge">{{boxes.todos.length}}</span></div>\n</div>\n<div class="parents">\n  <div data-boxes="boxes.father" class="father"></div>\n  <div data-boxes="boxes.mother" class="mother"></div>\n</div>';
