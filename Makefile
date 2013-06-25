@@ -1,4 +1,7 @@
 
+default: build
+	@:
+
 build: components index.js boxes.css template.js
 	@component build --dev
 

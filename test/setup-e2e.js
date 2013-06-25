@@ -34,6 +34,14 @@ var woman = {
   mother: null
 };
 
+function MakeGens(base, max) {
+  if (max <= 0) return null;
+  var person = copy(base);
+  person.father = MakeGens(man, max-1);
+  person.mother = MakeGens(woman, max-1);
+  return person;
+}
+
 function RandGens(base, max) {
   if (max <= 0) return null;
   else if (max < 4 && Math.random() > 0.8) return null;
@@ -80,6 +88,7 @@ var one = {
 
 function Tester($scope) {
   $scope.boxes = RandGens(man, 5);
+  $scope.otherBoxes = MakeGens(man, 5);
 }
 
 angular.module('test', ['boxes']);
