@@ -49,6 +49,7 @@ function RandGens(base, max) {
   person.todos = new Array(parseInt(Math.random() * 10));
   person.father = RandGens(man, max-1);
   person.mother = RandGens(woman, max-1);
+  person.status = ['working', 'clean', 'complete'][parseInt(Math.random()*3)];
   return person;
 }
 

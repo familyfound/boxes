@@ -1,6 +1,6 @@
-.person
+div(class="person status-{{boxes.status}}")
   .box
-    span.badge(ng-show="boxes.todos.length") {{boxes.todos.length}}
+    span.badge(ng-show="boxes.todos.length") {{undoneTodos()}}
 .parents
   .father(data-boxes="boxes.father")
   .mother(data-boxes="boxes.mother")

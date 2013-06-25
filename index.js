@@ -17,6 +17,15 @@ angular.module('boxes', [])
         link: function (scope, element, attrs) {
           var name = attrs.boxes;
           scope.boxes = null;
+          scope.undoneTodos = function () {
+            var undone = 0;
+            for (var i=0; i<scope.boxes.todos.length; i++) {
+              if (!scope.boxes.todos[i].completed) {
+                undone += 1;
+              }
+            }
+            return undone;
+          };
           scope.$parent.$watch(name, function(value) {
             if (!scope.boxes && value) {
               element.addClass('boxes');
