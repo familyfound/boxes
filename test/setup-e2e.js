@@ -46,7 +46,12 @@ function RandGens(base, max) {
   if (max <= 0) return null;
   else if (max < 4 && Math.random() > 0.8) return null;
   var person = copy(base);
-  person.todos = new Array(parseInt(Math.random() * 10));
+  person.todos = [];
+  var num = parseInt(Math.random() * 3);
+  for (var i=0; i<num; i++) {
+    person.todos.push({});
+  }
+
   person.father = RandGens(man, max-1);
   person.mother = RandGens(woman, max-1);
   person.status = ['working', 'clean', 'complete'][parseInt(Math.random()*3)];
