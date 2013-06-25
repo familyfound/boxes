@@ -51,6 +51,19 @@ function RandGens(base, max) {
   return person;
 }
 
+function SlowGens(base, max, scope) {
+  if (max <= 0) return null;
+  var person = copy(base);
+  setTimeout(function () {
+    person.father = SlowGens(man, max-1, scope);
+    scope.$digest();
+  }, Math.random() * 300 + 200);
+  setTimeout(function () {
+    person.mother = SlowGens(woman, max-1, scope);
+  }, Math.random() * 300 + 200);
+  return person;
+}
+
 var one = {
   display: {
     name: "Jared Forsyth",
@@ -88,6 +101,7 @@ var one = {
 
 function Tester($scope) {
   $scope.boxes = RandGens(man, 5);
+  $scope.slowBoxes = SlowGens(man, 5, $scope);
   $scope.otherBoxes = MakeGens(man, 5);
 }
 

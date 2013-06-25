@@ -16,6 +16,10 @@
       .docs {
         margin-bottom: 30px;
       }
+      .example {
+        float: left;
+        margin-right: 30px;
+      }
     </style>
   </head>
   <body>
@@ -28,8 +32,15 @@
     <hr/>
     <div id="ang" ng-app="test">
       <div ng-controller="Tester">
+        <div class="example"><h1>Slow loading</h1>
+        <div data-boxes="slowBoxes"></div>
+        </div>
+        <div class="example"><h1>Random missing</h1>
         <div data-boxes="boxes"></div>
+        </div>
+        <div class="example"><h1>Full immediate</h1>
         <div data-boxes="otherBoxes"></div>
+        </div>
       </div>
     </div>
     </div>
