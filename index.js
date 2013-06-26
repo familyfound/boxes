@@ -15,7 +15,8 @@ angular.module('boxes', [])
         replace: true,
         restrict: 'A',
         link: function (scope, element, attrs) {
-          var name = attrs.boxes;
+          var name = attrs.boxes
+            , clickName;
           scope.boxes = null;
           scope.undoneTodos = function () {
             var undone = 0;
@@ -26,6 +27,15 @@ angular.module('boxes', [])
             }
             return undone;
           };
+          if (attrs.clickBox) {
+            clickName = attrs.clickBox;
+            scope.$parent.$watch(clickName, function (value) {
+              scope.clickBox = value;
+            });
+            scope.$watch('clickBox', function (value) {
+              scope.$parent[clickName] = value;
+            });
+          }
           scope.$parent.$watch(name, function(value) {
             if (!scope.boxes && value) {
               element.addClass('boxes');
@@ -39,6 +49,10 @@ angular.module('boxes', [])
               });
               box.parentNode.addEventListener('mouseout', function () {
                 t.hide();
+              });
+              box.addEventListener('click', function () {
+                if (!scope.clickBox) return;
+                scope.clickBox(scope.boxes, box);
               });
             }
             scope.boxes = value;

@@ -1,6 +1,6 @@
 div(class="person status-{{boxes.status}}")
   .box
     span.badge(ng-show="boxes.todos.length") {{undoneTodos()}}
-.parents
-  .father(data-boxes="boxes.father")
-  .mother(data-boxes="boxes.mother")
+.parents(ng-hide='boxes.hideParents')
+  .father(data-boxes="boxes.father", data-click-box='clickBox')
+  .mother(data-boxes="boxes.mother", data-click-box='clickBox')

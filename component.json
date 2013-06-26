@@ -13,7 +13,9 @@
     "component/aurora-tip": "*",
     "jabapyth/bootstrap-labels-badges": "*"
   },
-  "development": {},
+  "development": {
+    "familyfound/domlog": "*"
+  },
   "license": "MIT",
   "main": "index.js",
   "scripts": [

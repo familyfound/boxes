@@ -3,8 +3,11 @@ var expect = require('chai').expect
   , angular = require('angularjs')
   // , settings = require('settings')
   // , angularSettings = require('angular-settings')
+  , log = require('domlog')
   , copy = require('deep-copy')
   , boxes = require('boxes');
+
+log.init();
 
 // angularSettings.factory('settings', settings.getSettings());
 
@@ -110,6 +113,10 @@ function Tester($scope) {
   $scope.boxes = RandGens(man, 5);
   $scope.slowBoxes = SlowGens(man, 5, $scope);
   $scope.otherBoxes = MakeGens(man, 5);
+  $scope.clickBox = function (person, node) {
+    log('got', person.display.name);
+  };
+  log('starting');
 }
 
 angular.module('test', ['boxes']);
