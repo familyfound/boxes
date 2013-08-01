@@ -6,12 +6,12 @@
   "keywords": [],
   "dependencies": {
     "chaijs/chai": "*",
-    "jabapyth/angularjs": "*",
+    "jaredly/angularjs": "*",
     "simov/deep-copy": "*",
     "component/query": "*",
     "component/tip": "*",
     "component/aurora-tip": "*",
-    "jabapyth/bootstrap-labels-badges": "*"
+    "jaredly/bootstrap-labels-badges": "*"
   },
   "development": {
     "familyfound/domlog": "*"
